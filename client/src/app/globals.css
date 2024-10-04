@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root variable for background and foreground */
+:root {
+  --background: url('./public/bg-image.png'); /* Correct path for Next.js public folder */
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)), url('./public/bg-image.png');
+    --foreground: #ededed;
+  }
+}
+
+/* Apply foreground and background colors */
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom utility class for text wrapping */
+@layer utilities {
+  .text-balance {
+    white-space: normal; /* Adjusted for better compatibility */
+  }
+}
